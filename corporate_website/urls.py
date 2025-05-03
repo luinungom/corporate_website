@@ -20,10 +20,10 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
-    # Core paths
-    path('', include('core.urls')),
     # Admin paths
     path('admin/', admin.site.urls),
+    # Core paths
+    path('', include('core.urls')),
 ]
 
 if settings.DEBUG:

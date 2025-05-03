@@ -14,6 +14,7 @@ urlpatterns = [
     path ('sample/', core_views.sample, name='sample'),
 ]
 
+# For media
 if settings.DEBUG:
     from  django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
