@@ -1,13 +1,10 @@
 from django.urls import path
-from . import views as blog_views
-
+from . import views as core_views
 
 from django.conf import settings
 
 urlpatterns = [
-    path('', blog_views.blog, name='blog'),
-    path('category/<int:category_id>/', blog_views.category, name='category'),
-
+    path('', core_views.contact, name='contact'),
 ]
 
 # For media

@@ -17,7 +17,7 @@
                              src="{{post.image.url}}" alt="">
                     </p>
                     <p class="mb-0 mbt">
-                        {{post.content|linebreaks}}
+                        {{post.content|linebreaks|safe}}
                     </p>
                     <p class="mb-0 mbt">
                         <span class="section-heading-under">Publicado por <em><b>{{post.author}}</b></em> en
@@ -25,8 +25,9 @@
                                 {{category.name}}
                                 {% if not forloop.last %}, {% endif %}
                             {% endfor %}
-<!--                            <em><a -->
-<!--                                href="#" class="link">General</a></em>-->
+                            {% if user.is_authenticated %}
+                            <p><a href="{% url 'admin:blog_post_change' post.id%}">Editar</a></p>
+                            {% endif %}
                         </span>
                     </p>
                 </div>

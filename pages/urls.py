@@ -1,12 +1,11 @@
 from django.urls import path
-from . import views as blog_views
+from . import views as pages_views
 
 
 from django.conf import settings
 
 urlpatterns = [
-    path('', blog_views.blog, name='blog'),
-    path('category/<int:category_id>/', blog_views.category, name='category'),
+    path('<int:page_id>/<slug:page_slug>/', pages_views.pages, name='page'),
 
 ]
 
